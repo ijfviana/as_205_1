@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Administración de Servidores</title>
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.min.css">
+
+        <link rel="stylesheet" href="bower_components/reveal.js/css/theme/default.css" id="theme">
+
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="bower_components/reveal.js/lib/css/zenburn.css" id="highlight-theme">
+
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+          document.write( '<link rel="stylesheet" href="bower_components/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+
+ 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+	<!-- fancybox -->
+
+	<link rel="stylesheet" href="bower_components/fancybox/source/jquery.fancybox.css" type="text/css" media="screen" />
+        <script type="text/javascript" src="bower_components/fancybox/source/jquery.fancybox.pack.js"></script>
+	<!-- end fancybox -->
+
+
+    <!-- begin qtip -->
+		<link type="text/css" rel="stylesheet" href="bower_components/qtip2/jquery.qtip.min.css" />
+		<script type="text/javascript" src="bower_components/qtip2/jquery.qtip.min.js"></script>
+		<!-- Optional: imagesLoaded dependancy to better support images inside your tooltips
+		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.0.1/jquery.imagesloaded.min.js"></script>
+		-->
+	<!-- end qtip -->
+
+	<link rel="stylesheet" href="theme/uhu.css">
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <div class="slides">
+
+                <% _.forEach(slides, function(slide) { %>
+                    <% if (!_.isArray(slide)) { %>
+                        <%= section(slide) %>
+                    <% } %>
+                    <% if (_.isArray(slide)) { %>
+                        <section>
+                            <% _.forEach(slide, function(verticalslide) { %>
+                                <%= section(verticalslide) %>
+                            <% }); %>
+                        </section>
+                    <% } %>
+                <% }); %>
+            </div>
+
+        </div>
+
+        <script src="bower_components/reveal.js/lib/js/head.min.js"></script>
+        <script src="bower_components/reveal.js/js/reveal.min.js"></script>
+        <script>
+            // Configure Reveal
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'bower_components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'bower_components/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+                    // { src: 'bower_components/reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+                    //{ src: 'bower_components/reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+
+                    { src: 'js/loadhtmlslides.js', condition: function() { return !!document.querySelector( '[data-html]' ); } }
+                ]
+            });
+        </script>
+
+        	<!-- begin fancybox -->
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				/*
+				 *  Simple image gallery. Uses default settings
+				 */
+
+				$('.fancybox').fancybox();
+
+				/*
+				*  Different effects
+				*/
+
+				// Change title type, overlay closing speed
+				$(".fancybox-effects-a").fancybox({
+					helpers : {
+						title : {
+							type : 'outside'
+						},
+						overlay : {
+							speedOut : 0
+						}
+					}
+				});
+
+				// Disable opening and closing animations, change title type
+				$(".fancybox-effects-b").fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+
+					helpers : {
+						title : {
+							type : 'over'
+						}
+					}
+				});
+
+				// Set custom style, close if clicked, change title type and overlay color
+				$(".fancybox-effects-c").fancybox({
+					wrapCSS : 'fancybox-custom',
+					closeClick : true,
+
+					openEffect : 'none',
+
+					helpers : {
+						title : {
+							type : 'inside'
+						},
+						overlay : {
+							css : {
+								'background' : 'rgba(238,238,238,0.85)'
+							}
+						}
+					}
+				});
+
+				// Remove padding, set opening and closing animations, close if clicked and disable overlay
+				$(".fancybox-effects-d").fancybox({
+					padding : 0,
+
+					openEffect : 'elastic',
+					openSpeed : 150,
+
+					closeEffect : 'elastic',
+					closeSpeed : 150,
+
+					closeClick : true,
+
+					helpers : {
+						overlay : null
+					}
+				});
+
+				/*
+				 *  Button helper. Disable animations, hide close button, change title type and content
+				 */
+
+				$('.fancybox-buttons').fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+
+					prevEffect : 'none',
+					nextEffect : 'none',
+
+					closeBtn : false,
+
+					helpers : {
+						title : {
+							type : 'inside'
+						},
+						buttons : {}
+					},
+
+					afterLoad : function() {
+						this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+					}
+				});
+
+				/*
+				 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+				 */
+
+				$('.fancybox-thumbs').fancybox({
+					prevEffect : 'none',
+					nextEffect : 'none',
+
+					closeBtn : false,
+					arrows : false,
+					nextClick : true,
+
+					helpers : {
+						thumbs : {
+							width : 50,
+							height : 50
+						}
+					}
+				});
+
+				/*
+				 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+				 */
+				$('.fancybox-media').attr('rel', 'media-gallery').fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+				/*
+				 *  Open manually
+				 */
+
+				$("#fancybox-manual-a").click(function() {
+					$.fancybox.open('1_b.jpg');
+				});
+
+				$("#fancybox-manual-b").click(function() {
+					$.fancybox.open({
+						href : 'iframe.html',
+						type : 'iframe',
+						padding : 5
+					});
+				});
+
+				$("#fancybox-manual-c").click(function() {
+					$.fancybox.open([{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}], {
+						helpers : {
+							thumbs : {
+								width : 75,
+								height : 50
+							}
+						}
+					});
+				});
+
+			});
+		</script>
+
+		<!-- end fancybox-->
+
+        <!---------------------------- begin Qtip2 ---------------------------->
+
+		<script>
+
+			/* Cargamos las notas cada vez que se carga un slide */
+
+			Reveal.addEventListener( 'slidechanged', function( event ) {
+				// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+
+				$('.tooltip[id^="tooltip_"]').each(function() {
+
+					$(this).qtip({
+						content : $('#data_' + $(this).attr('id')),
+						show : {
+						},
+
+						hide : {
+							fixed : true,
+							delay : 180
+						},
+
+						style : {
+							classes : 'ui-tooltip-default uhu'
+						}
+					});
+				});
+
+			} );
+		</script>
+		<!-- end Qtip -->
+
+<!-- Everything below this point is unrelated to the slideshow -->
+
+<a class="fork-reveal" style="display: inline;" href="https://github.com/ijfviana/as_205_1.git"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://github-camo.global.ssl.fastly.net/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork on GitHub"></a>
+
+<p style="position: absolute; bottom: 1pt; left: 5pt; border: 0; font-family:rbno2_light_alternative_Rg; font-weight:bold; color:#a8003b; letter-spacing: 0.02em; font-size: 1.8em"> Administración de Servidores: Configuración de Red, Configuración Básica </p>
+
+    </body>
+
+</html>

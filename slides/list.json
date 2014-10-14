@@ -1,0 +1,92 @@
+[
+
+    {
+        "filename": "index.md",
+        "attr": {
+            "data-background": "img/covert.png",
+            "class": "home",
+            "data-state": "homepage"
+        }
+    },
+    {
+        "filename": "outline.md",
+        "attr": {}
+    },
+    [
+    	{
+        	"filename": "wifi.md",
+        	"attr": {
+        		"data-state": "big-title",
+            	"data-transition":"zoom"
+            	}
+        },
+        {
+        	"filename": "wifi_contents.md",
+        	"attr": {
+	            "data-separator": "^\n\n\n",
+	            "data-vertical": "^\n\n"
+	        }
+        }
+    ],
+    [
+	    {
+	        "filename": "ip.md",
+	        "attr": {
+	            "data-state": "big-title",
+	            "data-transition":"zoom"
+	        }
+	    },
+	    {
+	        "filename": "ip_contents.md",
+	        "attr": {
+	            "data-separator": "^\n\n\n",
+	            "data-vertical": "^\n\n"
+	        }
+	    }
+    ],
+
+
+    [
+	    {
+	        "filename": "hostname.md",
+	        "attr": {
+	            "data-state": "big-title",
+	            "data-transition":"zoom"
+	        }
+	    },
+	    {
+	        "filename": "hostname_contents.md",
+	        "attr": {
+	            "data-separator": "^\n\n\n",
+	            "data-vertical": "^\n\n"
+	        }
+	    }
+    ],
+
+    [
+	    {
+	        "filename": "connectivity.md",
+	        "attr": {
+	            "data-state": "big-title",
+	            "data-transition":"zoom"
+	        }
+	    },
+	    {
+	        "filename": "connectivity_contents.md",
+	        "attr": {
+	            "data-separator": "^\n\n\n",
+	            "data-vertical": "^\n\n"
+	        }
+	    }
+    ],
+    {
+        "filename": "end.md",
+        "attr": {
+            "data-state":"thanks",
+            "class":"alternatelight",
+           "data-separator": "^\n\n\n",
+            "data-vertical": "^\n\n"
+
+        }
+    }
+]
