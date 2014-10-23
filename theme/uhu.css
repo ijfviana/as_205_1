@@ -7,6 +7,13 @@
  *
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
 .clearfix {
   *zoom: 1;
 }
@@ -52,6 +59,7 @@
   min-height: 1px;
   margin-left: 20px;
 }
+
 .container,
 .navbar-static-top .container,
 .navbar-fixed-top .container,
@@ -1602,6 +1610,16 @@ hr {
   height: 1px;
   background: #bfbfbf;
 }
+
+.reveal thead {
+  background-color: #a8003b;
+  color: white;
+}
+
+.revel tbody {
+  background-color: white;
+}
+
 /* ----------------------------- */
 /* == *content specific */
 /* ----------------------------- */
@@ -1695,6 +1713,15 @@ hr {
   -o-background-size: cover;
   background-size: cover;
 }
+
+.biblio .state-background {
+  background: url('img/library.jpg') no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 .vertical .state-background {
   background: url('img/vertical.jpg') no-repeat;
   -webkit-background-size: cover;

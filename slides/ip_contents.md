@@ -220,27 +220,26 @@ default     192.168.29.1 0.0.0.0       UG    0     0    0   eth0
 
 
 
-### Herramientas de configuración
+## Herramientas de configuración
 
 * NetworkManager
 * wicd
-* ifup
+* [ifup](/3/14)
 
 
 
-### Herramientas de configuración (I)
-#### [ifup](http://linux.die.net/man/8/ifup)
+## Herramientas de configur... (II)
+### [ifup](http://linux.die.net/man/8/ifup)
 
 * El comando [ifup](http://linux.die.net/man/8/ifup) y [ifdown](http://linux.die.net/man/8/ifdown) automatizan la invocación a [ifconfig](http://linux.die.net/man/8/ifconfig) y [route](http://linux.die.net/man/8/route)
-* Al invocarlos configuran la red en base a los ficheros de configuración definidos:
+* Configuran la red en base a los [ficheros de configuración](/#/3/5):
 ```bash
 # ifup eth0
 Determining IP information for eth0... done.
 ```
-* Facilitan levantar o echar a bajo la red
-* Permiten comprobar que los ficheros de configuración están bien definidos
+* Facilitan levantar o echar a bajo la red y comprobar si dichos ficheros están bien definidos
 
-<aside class="notes">
+note:
 * Most Linux distributions today ship with two commands, ifup and ifdown, that combine the functions of several other network commands, most notably ifconfig and route.
 * In their simplest forms, they bring interfaces up or shut them down based on information in whatever files your distribution uses to store network configuration data:
 * The ifup and ifdown commands are useful for verifying that the network settings are configured properly for the next time the computer boots.

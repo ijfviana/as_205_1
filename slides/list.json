@@ -79,6 +79,18 @@
 	        }
 	    }
     ],
+
+    {
+        "filename": "biblio.md",
+        "attr": {
+            "data-state":"biblio",
+            "class":"alternatelight",
+           "data-separator": "^\n\n\n",
+            "data-vertical": "^\n\n"
+
+        }
+    },
+
     {
         "filename": "end.md",
         "attr": {

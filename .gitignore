@@ -1,3 +1,4 @@
+/.sublime-grunt.cache
 node_modules
 bower_components
 dist
